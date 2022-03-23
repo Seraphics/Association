@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://gdjrxy.github.io/gduf_io/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>易广金出入凭证生成器</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <link href="./易广金出入凭证生成器_files/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./易广金出入凭证生成器_files/jquery.js.下载"></script>
+    <script type="text/javascript" src="./易广金出入凭证生成器_files/time.js.下载"></script>
+</head>
+
+<body>
+    <section class="aui-flexView">
+        <header class="aui-navBar aui-navBar-fixed">
+            <div class="aui-center">
+                <span class="aui-center-title">易广金出入凭证生成器</span>
+            </div>
+        </header>
+        <section class="aui-scrollView">
+            <div class="aui-code-box">
+                <form action="https://gdjrxy.github.io/gduf_io/index.html">
+                    <p class="aui-code-line">
+                        <span style="position:relative;" class="add-clear-span"><input type="text" class="aui-code-line-input" name="search" value="" id="studentName" autocomplete="off" placeholder="请输入姓名"><a href="https://gdjrxy.github.io/gduf_io/index.html#clear" style="color: rgb(204, 204, 204); text-decoration: none; display: none; line-height: 1; overflow: hidden; position: absolute; right: 4px; top: 1px;">✖</a></span>
+                    </p>
+                    <p class="aui-code-line">
+                        <span style="position:relative;" class="add-clear-span"><input type="text" class="aui-code-line-input" name="search" value="" id="studentId" autocomplete="off" placeholder="请输入学号"><a href="https://gdjrxy.github.io/gduf_io/index.html#clear" style="color: rgb(204, 204, 204); text-decoration: none; display: none; line-height: 1; overflow: hidden; position: absolute; right: 4px; top: 1px;">✖</a></span>
+                    </p>
+                    <div class="aui-che-item">
+                        <div class="aui-cell-che">
+                            <input type="checkbox" class="aui-well-check" name="checkbox1" id="checkbox1" checked="checked">
+                            <i class="aui-well-icon-checked"></i>
+                        </div>我已经阅读并同意 <a href="https://gdjrxy.github.io/gduf_io/disclaimer.html">《免责声明》</a>
+                    </div>
+                    <div class="aui-code-btn">
+                        <button type="button" onclick="boys()">男生</button>
+                    </div>
+                    <div class="aui-code-btn">
+                        <button type="button" onclick="girls()">女生</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </section>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $(".aui-code-line-input").addClear();
+            document.getElementById('studentName').value = getParam()['studentName'];
+            document.getElementById('studentId').value = getParam()['studentId'];
+        });
+
+        function getParam() {
+            var url = location.search; //获取url中"?"符后的字串
+            var info = { 'studentName': '', 'studentId': '' }
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    if (strs[i].indexOf("studentName=") != -1) {
+                        info['studentName'] = decodeURIComponent(strs[i].replace("studentName=", ""));
+                    };
+                    if (strs[i].indexOf("studentId=") != -1) {
+                        info['studentId'] = decodeURIComponent(strs[i].replace("studentId=", ""));
+                    };
+                };
+                return info;
+            };
+            return info;
+        };
+
+        function boys() {
+            var name = document.getElementById('studentName').value.replace(/(^\s*)|(\s*$)/g, '');
+            var id = document.getElementById('studentId').value.replace(/(^\s*)|(\s*$)/g, '');
+            var checkstatus = document.getElementById('checkbox1').checked;
+            if (checkstatus == true) {
+                if (name.length != 0) {
+                    if (id.length != 0) {
+                        window.location.href = "易广金-学生端.html?studentName=" + name + "&studentId=" + id + "&studentSex=男";
+                    } else {
+                        alert("请正确填写姓名与学号！");
+                    }
+                } else {
+                    alert("请正确填写姓名与学号！");
+                }
+            } else {
+                alert("请先阅读并同意免责说明书！");
+            }
+        };
+
+        function girls() {
+            var name = document.getElementById('studentName').value.replace(/(^\s*)|(\s*$)/g, '');
+            var id = document.getElementById('studentId').value.replace(/(^\s*)|(\s*$)/g, '');
+            var checkstatus = document.getElementById('checkbox1').checked;
+            if (checkstatus == true) {
+                if (name.length != 0) {
+                    if (id.length != 0) {
+                        window.location.href = "易广金-学生端.html?studentName=" + name + "&studentId=" + id + "&studentSex=女";
+                    } else {
+                        alert("请正确填写姓名与学号！");
+                    }
+                } else {
+                    alert("请正确填写姓名与学号！");
+                }
+            } else {
+                alert("请先阅读并同意免责说明书！");
+            }
+        };
+    </script>
+
+
+</body></html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- saved from url=(0125)https://gdjrxy.github.io/gduf_io/student-default.html?studentName=%E6%9E%97%E8%89%BA&studentId=201541222&studentSex=%E5%A5%B3 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>易广金-学生端</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="./易广金-学生端_files/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="./易广金-学生端_files/app.css">
+    <style>
+        body {
+            padding: 2%;
+        }
+
+        a {
+            display: block;
+
+            text-align: center;
+            width: 21%;
+            text-decoration: none;
+            color: #000;
+            float: left;
+        }
+
+        a span {
+            display: block;
+            margin-top: 0px;
+            line-height: 20px;
+            height: 40px;
+        }
+
+        a img {
+            width: 100%;
+        }
+     #picture {margin:0;padding:0;
+	}
+
+        #mainBox {
+            display: none;
+        }
+
+        #mainBox a {
+            margin: 2%;
+        }
+
+        .noticeBox {
+            overflow: hidden;
+            width: 100%;
+            float: left;
+        }
+
+        .noticeBox .item {
+            border-bottom: 1px solid #ccc;
+            overflow: hidden;
+            padding: 5px 0 5px 0;
+        }
+
+        .noticeBox .item:first-child {
+            border-top: 1px solid #ccc;
+        }
+
+        .noticeBox .item span {
+            display: block;
+            width: 100%;
+            float: left;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .noticeBox .item span:last-child {
+            display: block;
+            width: 100%;
+            float: left;
+            text-align: left;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainBox" style="display: block;">
+        <a><img src="./易广金-学生端_files/qjzs.png"><span>请假助手</span></a>
+        <a><img src="./易广金-学生端_files/cwj.png"><span>查违纪</span></a>
+        <a><img src="./易广金-学生端_files/xszs.png"><span>新生助手</span></a>
+        <a><img src="./易广金-学生端_files/jwxt.png"><span>教务系统</span></a>
+        <a><img src="./易广金-学生端_files/stfw.png"><span>社团服务</span></a>
+        <a href="https://feizao67.github.io/post/GDUF_autocheck_2.0/"><img src="./易广金-学生端_files/health.png"><span>健康打卡</span></a>
+        <a><img src="./易广金-学生端_files/backschool.png"><span>返校申请</span></a>
+        <a href="出校申报.html?studentName=林艺&amp;studentId=181943222&amp;studentSex=女"><img src="./易广金-学生端_files/outschool.png"><span>出校申报</span></a>
+        <a><img src="./易广金-学生端_files/xwzl.png"><span>寻物招领</span></a>
+        <a><img src="./易广金-学生端_files/xzzs.png"><span>学子之声</span></a>
+        <a><img src="./易广金-学生端_files/kjscx.png"><span>空教室查询</span></a>
+    </div>
+    <script src="./易广金-学生端_files/mui.min.js.下载"></script>
+    <script src="./易广金-学生端_files/jquery.min.js.下载"></script>
+    <script src="./易广金-学生端_files/common.js.下载"></script>
+    <script>
+        function getParam() {
+            var url = location.search; //获取url中"?"符后的字串
+            var info = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    if (strs[i].indexOf("studentName=") != -1) {
+                        info['studentName'] = decodeURIComponent(strs[i].replace("studentName=", ""));
+                    };
+                    if (strs[i].indexOf("studentId=") != -1) {
+                        info['studentId'] = decodeURIComponent(strs[i].replace("studentId=", ""));
+                    };
+                    if (strs[i].indexOf("studentSex=") != -1) {
+                        info['studentSex'] = decodeURIComponent(strs[i].replace("studentSex=", ""));
+                    };
+                };
+                return info;
+            } else {
+                info = { 'studentName': '林艺', 'studentId': '211435213', 'studentSex': '女' }
+                return info;
+            }
+        }
+        $("#student-index").attr("href", "student-index.html?studentName=" + getParam()['studentName'] + "&studentId=" + getParam()['studentId'] + "&studentSex=" + getParam()['studentSex']);
+        $("#mainBox").show();
+    </script>
+
+
+</body></html>
