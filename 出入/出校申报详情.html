@@ -169,7 +169,7 @@
 		}
 
 		function inSchool() {
-			var txt = '<p style="color:red">入校凭证有效时间仅5分钟，请确定你已在校门附近准备入校？</p>';
+			var txt = '<p style="color:red">入校凭证有效时间仅5分钟，请确定你已在校门附近准备入校？<br/>收寄快递出校仅一小时有效时间，请务必在使用出校凭证后一小时内返校（使用入校凭证），否则你将无法入校</p>';
 			var btnArray = ['是', '否'];
 			mui.confirm(txt, '<p style="color:red;font-weight:bold">重要提示！！！</p>', btnArray, function (e) {
 				window.location.href = "入凭证.html?studentName=" + getParam()['studentName'] + "&studentId=" + getParam()['studentId'] + "&studentSex=" + getParam()['studentSex'];
