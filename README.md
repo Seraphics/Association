@@ -2,6 +2,6 @@
 #           三秒后将抵达主星球
 <head>
 
-<meta http-equiv="refresh" content="3;url=出入/易广金出入凭证生成器.html"> 
+<meta http-equiv="refresh" content="3;url=登录主页.html"> 
 
 </head>
